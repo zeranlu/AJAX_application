@@ -7,6 +7,9 @@
 
   const materialTemplate = document.querySelector("#material-template");
   const materialList = document.querySelector("#material-list");
+
+  const loader = document.querySelector("#loader");
+
   
 
 
@@ -96,6 +99,7 @@
 
 
   function loadMaterialInfo() {
+    loader.classList.toggle("hidden");
 
     fetch("https://swiftpixel.com/earbud/api/materials").then(response => response.json()).then(material => {
       console.log(material);
@@ -110,7 +114,8 @@
 
         const materialDescription = clone.querySelector(".material-desc");
         materialDescription.textContent = material.description;
-
+        
+        loader.classList.toggle("hidden");
         materialList.appendChild(clone);
       });
     }).catch(error => {
