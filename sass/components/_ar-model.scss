@@ -1,5 +1,16 @@
   // Customize our own hotspot 
 
+#model-viewer-mob img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: auto;
+}
+
+#model-viewer-tab {
+  display: none;
+}
+
   model-viewer {
     width: auto;
     max-width: 1200px;
@@ -88,3 +99,17 @@
         display: block;
       }
   }
+
+
+
+@media screen and (min-width: 768px) {
+  
+  #model-viewer-mob {
+    display: none;
+  }
+
+  #model-viewer-tab {
+    display: block;
+  }
+
+}
