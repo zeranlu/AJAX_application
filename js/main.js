@@ -1,16 +1,12 @@
 (() => {
 
-  //variables
+  //VARIABLES
   const hotspots = document.querySelectorAll(".Hotspot");
-
-// IN CLASS BUILD STARTS HERE
 
   const materialTemplate = document.querySelector("#material-template");
   const materialList = document.querySelector("#material-list");
 
   const loader = document.querySelector("#loader");
-
-  
 
 
 
@@ -86,10 +82,9 @@
         });
       }).catch(error => {
       console.log(error);
-
-
-// Make and error message and put it here
-
+      const errorMessage = document.createElement("p");
+      errorMessage.textContent = "Oops, something went wrong. It may be your internet connection or it might be us. Please try again later."
+      peopleCon.appendChild(errorMessage);
     });
   };
   loadInfoBoxes();
@@ -120,17 +115,14 @@
       });
     }).catch(error => {
       console.log(error);
-
-
-
-
+      const errorMessage = document.createElement("p");
+      errorMessage.textContent = "Oops, something went wrong. It may be your internet connection or it might be us. Please try again later."
+      peopleCon.appendChild(errorMessage);
     });
   };
   loadMaterialInfo();
   
 // NOTE *** For homework, mobile strategy (recommended still image), should have a loading bar, materials list cannot be in an array, must be pulled from API, failed to load error message
-
-// 
 
   function showInfo() {
     let selected = document.querySelector(`#${this.slot}`);
